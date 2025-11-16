@@ -1,5 +1,5 @@
 // 1. Regex for PAN format
-export const PAN_REGEX = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+export const PAN_REGEX = /^[A-Z]{5}\d{4}[A-Z]$/;
 
 // 2. Valid 4th characters (Entity types)
 export const VALID_ENTITY_CHARS = "PCHFATBLJG";
@@ -7,13 +7,14 @@ export const VALID_ENTITY_CHARS = "PCHFATBLJG";
 // 3. Regex for A-Z letter (reused for surname first letter)
 export const LETTER_AZ_REGEX = /[A-Z]/;
 
-// 4. NEW: Surname must contain ONLY letters (no digits, symbols, spaces)
+// 4. ONLY LETTERS REGEX
 export const ONLY_LETTERS_REGEX = /^[A-Za-z]+$/;
 
 // 5. Result type
 type PANValidationResult = {
     valid: boolean;
     error?: string;
+    message?: string;
 };
 
 /**
@@ -66,11 +67,11 @@ export function validatePAN(pan: string, surname: string): PANValidationResult {
         };
     }
 
-    // 6. NEW: Surname must contain ONLY letters (A-Z, a-z)
+    // 6. Only must letters
     if (!ONLY_LETTERS_REGEX.test(trimmed)) {
         return {
             valid: false,
-            error: "Surname must contain only letters (A-Z). No digits, spaces, or symbols allowed.",
+            error: "Surname must contain only letters (A-Z). No digits or symbols."
         };
     }
 
@@ -93,6 +94,7 @@ export function validatePAN(pan: string, surname: string): PANValidationResult {
     }
 
     return {
-        valid: true
+        valid: true,
+        message: "PAN is verified."
     };
 }

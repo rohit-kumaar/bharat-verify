@@ -5,6 +5,7 @@ declare const ONLY_LETTERS_REGEX: RegExp;
 type PANValidationResult = {
     valid: boolean;
     error?: string;
+    message?: string;
 };
 /**
  * validatePAN – KYC-grade PAN + Surname validation

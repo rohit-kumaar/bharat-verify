@@ -11,4 +11,10 @@ export default defineConfig({
   minify: false,
   target: "es2022",
   outDir: "dist",
+  outExtension({ format }) {
+    return {
+      js: format === "esm" ? ".mjs" : ".js",
+      dts: ".d.ts",
+    };
+  },
 });

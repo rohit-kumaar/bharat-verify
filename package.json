@@ -1,7 +1,7 @@
 {
   "name": "bharat-verify",
   "version": "1.0.0",
-  "description": "Simple validators for PAN, Aadhaar, GSTIN, Indian phone numbers and IFSC codes",
+  "description": "A powerful and lightweight validation library for Indian PAN numbers, Aadhaar numbers, GSTIN, mobile phone numbers, and IFSC codes. Ideal for KYC, fintech, banking, and verification workflows.",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -41,7 +41,7 @@
     "name": "Rohit Kumar",
     "url": "https://github.com/rohit-kumaar"
   },
-  "license": "",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/rohit-kumaar/bharat-verify"
