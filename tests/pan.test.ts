@@ -1,7 +1,7 @@
 // tests/pan.test.ts
 import { validatePAN, PAN_REGEX, VALID_ENTITY_CHARS, LETTER_AZ_REGEX } from "../src/pan.js";
 
-describe("PAN Validation - KYC-Compliant PAN and Surname Verification", () => {
+describe("PAN Validation - Surname Verification", () => {
 
     test("Exports the correct constants", () => {
         expect(PAN_REGEX.test("ABCDE1234F")).toBe(true);
