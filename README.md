@@ -1,10 +1,8 @@
 # bharat-verify
 
-> **"Bharat Verified. No fakes. No myths."**
+A powerful and lightweight validation library for Indian PAN numbers, Aadhaar numbers, GSTIN, mobile phone numbers, and IFSC codes. Ideal for KYC, fintech, banking, and verification workflows.
 
-Zero-dependency, fast, and secure — perfect for KYC, fintech, and verification workflows.
-
-### 👉 PAN Validation - Surname Verification
+### 1️⃣ PAN Validation - Surname Verification
 
 ```ts
  validatePAN(pan: string, surname: string)
@@ -13,9 +11,10 @@ Zero-dependency, fast, and secure — perfect for KYC, fintech, and verification
 It returns a JSON response such as:
 
 ```ts
- { "valid": false, "error": "message" }
- { "valid": true,  "message": "PAN is verified."}
+ { valid: boolean, error?: string,  message?: string }
 ```
+
+#### 🧪 TESTED
 
 ✅ Exports the correct constants  
 ✅ Rejects PAN numbers that are not 10 characters long  
