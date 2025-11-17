@@ -1,10 +1,10 @@
-## bharat-verify
+# bharat-verify
 
 > **"Bharat Verified. No fakes. No myths."**
 
 Zero-dependency, fast, and secure — perfect for KYC, fintech, and verification workflows.
 
-### PAN Validation - KYC-Compliant PAN and Surname Verification
+### 👉 PAN Validation - Surname Verification
 
 ```ts
  validatePAN(pan: string, surname: string)
