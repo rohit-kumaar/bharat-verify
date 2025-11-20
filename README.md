@@ -75,6 +75,25 @@ It returns a `JSON` response such as:
 - Rejects starting with 0-5
 - Rejects wrong length
 
+####
+
+### 4️⃣ Indian Bank IFSC Code Validation
+
+####
+
+```ts
+ validateIFSC(ifsc: string)
+```
+
+#### 🧪 TESTED
+
+- Rejects empty/null/undefined
+- Accepts string input and trims whitespace
+- Is case-insensitive
+- Rejects wrong length
+- Rejects missing 4th zero
+- Accepts valid IFSC codes
+
 ## Links
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/-rohit-kumaar/)

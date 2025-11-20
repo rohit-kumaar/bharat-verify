@@ -25,7 +25,7 @@ const VERHOEFF_TABLE_P = [
     [7, 0, 4, 6, 9, 1, 3, 2, 5, 8],
 ] as const;
 
-export type AadhaarValidationResult = {
+type AadhaarValidationResult = {
     valid: boolean;
     error?: string;
     message?: string;
