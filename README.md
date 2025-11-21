@@ -47,7 +47,7 @@ validateAadhaar(null | undefined | "" | "  ")    // false
 validateAadhaar("   234123412346   ")            // true
 validateAadhaar("\t\n  234123412346  \r\n")      // true
 validateAadhaar(234123412346)                    // true
- validateAadhaar("XXXX XXXX XXXX")               // false
+validateAadhaar("XXXX XXXX XXXX")                // false
 validateAadhaar("XXXX-XXXX-XXXX")                // false
 validateAadhaar("0XXXXXXXXXXX" | "1XXXXXXXXXXX") // false
 ```
