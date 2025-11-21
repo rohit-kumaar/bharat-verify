@@ -1,6 +1,11 @@
 # bharat-verify
 
-A powerful and lightweight `validation library` for Indian PAN numbers, Aadhaar numbers, GSTIN, mobile phone numbers, and IFSC codes. Ideal for KYC, fintech, banking, and verification workflows.
+A powerful and lightweight `validation library` for Indian. Perfect for KYC systems, fintech apps, banking workflows, onboarding processes, and verification pipelines. Easy to integrate, fully typed, and optimized for performance.
+
+- [PAN Number](#1️⃣-PAN-Validation-Surname-Verification)
+- [Aadhaar Number](#2️⃣-Aadhaar-Validation)
+- [Mobile Number](#3️⃣-Indian-Mobile-Number-Validation)
+- [IFSC Code](#4️⃣-Indian-Bank-IFSC-Code-Validation)
 
 It returns a `JSON` response such as:
 
@@ -8,9 +13,7 @@ It returns a `JSON` response such as:
  { valid: boolean, error?: string,  message?: string }
 ```
 
-### 1️⃣ PAN Validation - Surname Verification
-
-####
+## 1️⃣ PAN Validation - Surname Verification
 
 ```ts
  validatePAN(pan: string, surname: string)
@@ -18,25 +21,20 @@ It returns a `JSON` response such as:
 
 #### 🧪 TESTED
 
-- Exports the correct constants
-- Rejects PAN numbers that are not 10 characters long
-- Validates PAN using the official regex
-- Case-insensitive PAN matching
-- Rejects non-string PAN inputs
-- Rejects PAN values that fail the regex
-- Validates all permitted PAN entity types
-- Accepts surname when it matches PAN rules
-- Rejects non-string surname inputs
-- Rejects empty or whitespace-only surname
-- Ensures surname contains only alphabetic letters
-- Ensures surname begins with a valid letter
-- Rejects PAN numbers whose 5th character does not match the surname’s first letter
+```js
+validatePAN(null | undefined | 1234567890, "Kumar")              // false
+validatePAN("ABCPK1234Z", null | undefined | 12345)              // false
+validatePAN("ABCPK1234Z", "kum123" | "@kum" | "#kum" | " kumar") // false
+validatePAN("ABCPK1234Z", "" | "  ")                             // false
+validatePAN("ABCPK1234?", "Kumar")                               // false
+validatePAN("XXXXXXXXZX", "Kumar")                               // false
+validatePAN(" ABCPK1234ZZ", "Kumar")                             // false
+validatePAN("XXXXDXXXXZX", "KXXXXX")                             // false
+validatePAN("abcPK1234z", "KUMAR")                               // true
+validatePAN("XXX[ P|C|H|F|A|T|B|L|J|G ]XXXXXX", "Kumar")         // true
+```
 
-####
-
-### 2️⃣ Aadhaar Validation
-
-####
+## 2️⃣ Aadhaar Validation
 
 ```ts
  validateAadhaar(aadhaar: string | number);
@@ -44,23 +42,17 @@ It returns a `JSON` response such as:
 
 #### 🧪 TESTED
 
-- Removes leading and trailing whitespace
-- Removes tabs, newlines, carriage returns
-- Converts number to string and trims spaces
-- Does NOT remove spaces in the middle (correct behavior)
-- Handles null / undefined / empty string gracefully
-- Real-world copy-paste from PDF/Excel (lots of spaces)
-- With spaces or dashes (rejected as non-digits)
-- All zeros (invalid checksum)
-- Rejects if starts with 1
-- Valid checksum passes
-- Invalid checksum passes
+```js
+validateAadhaar(null | undefined | "" | "  ")    // false
+validateAadhaar("   234123412346   ")            // true
+validateAadhaar("\t\n  234123412346  \r\n")      // true
+validateAadhaar(234123412346)                    // true
+ validateAadhaar("XXXX XXXX XXXX")               // false
+validateAadhaar("XXXX-XXXX-XXXX")                // false
+validateAadhaar("0XXXXXXXXXXX" | "1XXXXXXXXXXX") // false
+```
 
-####
-
-### 3️⃣ Indian Mobile Number Validation
-
-####
+## 3️⃣ Indian Mobile Number Validation
 
 ```ts
  validateMobile(mobile: string | number)
@@ -68,18 +60,15 @@ It returns a `JSON` response such as:
 
 #### 🧪 TESTED
 
-- Accepts clean 10-digit number starting with 6-9
-- Accepts number type
-- Accepts +91 prefix
-- Accepts spaces, spaces, dashes, parentheses
-- Rejects starting with 0-5
-- Rejects wrong length
+```js
+validateMobile(6203306876 | 7203306876 | 8765432109)               // true
+validateMobile("+919876543210" | "91 9876543210")                  // true
+validateMobile(" 98765 43210 " | "(98765) 43210" | "98765-432-10") // true
+validateMobile("5XXXXXXXXX" | "0XXXXXXXXX")                        // false
+validateMobile("987654321" | "98765432109")                        // false
+```
 
-####
-
-### 4️⃣ Indian Bank IFSC Code Validation
-
-####
+## 4️⃣ Indian Bank IFSC Code Validation
 
 ```ts
  validateIFSC(ifsc: string)
@@ -87,12 +76,12 @@ It returns a `JSON` response such as:
 
 #### 🧪 TESTED
 
-- Rejects empty/null/undefined
-- Accepts string input and trims whitespace
-- Is case-insensitive
-- Rejects wrong length
-- Rejects missing 4th zero
-- Accepts valid IFSC codes
+```js
+validateIFSC(" " | null | undefined)               // false     
+validateIFSC("  sbin0001234 " | "\tHDFC0005678\n") // true
+validateIFSC("SBIN000123" | "SBIN00012345")        // false
+validateIFSC("XXXX1XXXXXX")                        // false
+```
 
 ## Links
 

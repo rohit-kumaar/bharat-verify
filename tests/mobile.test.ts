@@ -10,6 +10,7 @@ describe("ValidateMobile - Indian Mobile Number Validation", () => {
 
     test("Accepts number type", () => {
         expect(validateMobile(8765432109).valid).toBe(true);
+        expect(validateMobile(6203306876).valid).toBe(true);
     });
 
     test("Accepts +91 prefix", () => {
