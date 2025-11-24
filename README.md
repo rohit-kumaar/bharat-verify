@@ -6,7 +6,7 @@ A powerful and lightweight `validation library` for Indian. Perfect for KYC syst
 - [Aadhaar](#2️⃣-Aadhaar-Validation)
 - [Mobile](#3️⃣-Indian-Mobile-Number-Validation)
 - [IFSC](#4️⃣-Indian-Bank-IFSC-Code-Validation)
-- [GSTIN + PAN Match)](#5️⃣-GSTIN-Validation-Surname-Verification)
+- [GSTIN + PAN Match](#5️⃣-GSTIN-Validation-Surname-Verification)
 
 It returns a `JSON` response such as:
 
@@ -14,7 +14,7 @@ It returns a `JSON` response such as:
 { valid: boolean, error?: string,  message?: string }
 ```
 
-## 1️⃣ PAN Validation - Surname Verification
+### 1️⃣ PAN Validation - Surname Verification
 
 ```ts
 validatePAN(pan: string, surname: string)
@@ -35,7 +35,7 @@ validatePAN("abcPK1234z", "KUMAR")                               // true
 validatePAN("XXX[ P|C|H|F|A|T|B|L|J|G ]XXXXXX", "Kumar")         // true
 ```
 
-## 2️⃣ Aadhaar Validation
+### 2️⃣ Aadhaar Validation
 
 ```ts
 validateAadhaar(aadhaar: string | number)
@@ -53,7 +53,7 @@ validateAadhaar("XXXX-XXXX-XXXX")                // false
 validateAadhaar("0XXXXXXXXXXX" | "1XXXXXXXXXXX") // false
 ```
 
-## 3️⃣ Indian Mobile Number Validation
+### 3️⃣ Indian Mobile Number Validation
 
 ```ts
 validateMobile(mobile: string | number)
@@ -69,7 +69,7 @@ validateMobile("5XXXXXXXXX" | "0XXXXXXXXX")                        // false
 validateMobile("987654321" | "98765432109")                        // false
 ```
 
-## 4️⃣ Indian Bank IFSC Code Validation
+### 4️⃣ Indian Bank IFSC Code Validation
 
 ```ts
 validateIFSC(ifsc: string)
@@ -84,7 +84,7 @@ validateIFSC("SBIN000123" | "SBIN00012345")        // false
 validateIFSC("XXXX1XXXXXX")                        // false
 ```
 
-## 5️⃣ GSTIN Validation - Surname Verification
+### 5️⃣ GSTIN Validation - Surname Verification
 
 ```ts
 validateGSTIN(pan: string, surname: string)
