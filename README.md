@@ -2,11 +2,11 @@
 
 A powerful and lightweight `validation library` for Indian. Perfect for KYC systems, fintech apps, banking workflows, onboarding processes, and verification pipelines. Easy to integrate, fully typed, and optimized for performance.
 
-- [PAN + Surname Match](#1️⃣-PAN-Validation-Surname-Verification)
+- [PAN + Surname Match](#1️⃣-PAN-Validation---Surname-Verification)
 - [Aadhaar](#2️⃣-Aadhaar-Validation)
 - [Mobile](#3️⃣-Indian-Mobile-Number-Validation)
 - [IFSC](#4️⃣-Indian-Bank-IFSC-Code-Validation)
-- [GSTIN + PAN Match](#5️⃣-GSTIN-Validation-Surname-Verification)
+- [GSTIN + PAN Match](#5️⃣-GSTIN-Validation---Surname-Verification)
 
 It returns a `JSON` response such as:
 
