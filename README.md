@@ -2,21 +2,22 @@
 
 A powerful and lightweight `validation library` for Indian. Perfect for KYC systems, fintech apps, banking workflows, onboarding processes, and verification pipelines. Easy to integrate, fully typed, and optimized for performance.
 
-- [PAN Number](#1️⃣-PAN-Validation-Surname-Verification)
-- [Aadhaar Number](#2️⃣-Aadhaar-Validation)
-- [Mobile Number](#3️⃣-Indian-Mobile-Number-Validation)
-- [IFSC Code](#4️⃣-Indian-Bank-IFSC-Code-Validation)
+- [PAN + Surname Match](#1️⃣-PAN-Validation-Surname-Verification)
+- [Aadhaar](#2️⃣-Aadhaar-Validation)
+- [Mobile](#3️⃣-Indian-Mobile-Number-Validation)
+- [IFSC](#4️⃣-Indian-Bank-IFSC-Code-Validation)
+- [GSTIN + PAN Match)](#5️⃣-GSTIN-Validation-Surname-Verification)
 
 It returns a `JSON` response such as:
 
 ```ts
- { valid: boolean, error?: string,  message?: string }
+{ valid: boolean, error?: string,  message?: string }
 ```
 
 ## 1️⃣ PAN Validation - Surname Verification
 
 ```ts
- validatePAN(pan: string, surname: string)
+validatePAN(pan: string, surname: string)
 ```
 
 #### 🧪 TESTED
@@ -37,7 +38,7 @@ validatePAN("XXX[ P|C|H|F|A|T|B|L|J|G ]XXXXXX", "Kumar")         // true
 ## 2️⃣ Aadhaar Validation
 
 ```ts
- validateAadhaar(aadhaar: string | number);
+validateAadhaar(aadhaar: string | number)
 ```
 
 #### 🧪 TESTED
@@ -55,7 +56,7 @@ validateAadhaar("0XXXXXXXXXXX" | "1XXXXXXXXXXX") // false
 ## 3️⃣ Indian Mobile Number Validation
 
 ```ts
- validateMobile(mobile: string | number)
+validateMobile(mobile: string | number)
 ```
 
 #### 🧪 TESTED
@@ -71,7 +72,7 @@ validateMobile("987654321" | "98765432109")                        // false
 ## 4️⃣ Indian Bank IFSC Code Validation
 
 ```ts
- validateIFSC(ifsc: string)
+validateIFSC(ifsc: string)
 ```
 
 #### 🧪 TESTED
@@ -81,6 +82,22 @@ validateIFSC(" " | null | undefined)               // false
 validateIFSC("  sbin0001234 " | "\tHDFC0005678\n") // true
 validateIFSC("SBIN000123" | "SBIN00012345")        // false
 validateIFSC("XXXX1XXXXXX")                        // false
+```
+
+## 5️⃣ GSTIN Validation - Surname Verification
+
+```ts
+validateGSTIN(pan: string, surname: string)
+```
+
+#### 🧪 TESTED
+
+```js
+validateGSTIN(null | undefined | 1234567890, " ") // false
+validateGSTIN("\t07BBBBK1111B1Z9\n", "Kumar")     // true
+validateGSTIN("XXXXXXXXXXXXXXX5", "X")            // false
+validateGSTIN("99XXXXXXXXXXXX", "X")              // false
+validateGSTIN("XXXXXXXXXXXXXzX", "X")             // true
 ```
 
 ## Links
