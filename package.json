@@ -1,6 +1,6 @@
 {
   "name": "bharat-verify",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "A powerful and lightweight validation library for Indian PAN numbers, Aadhaar numbers, GSTIN, mobile phone numbers, and IFSC codes. Ideal for KYC, fintech, banking, and verification workflows.",
   "type": "module",
   "main": "dist/index.cjs",
